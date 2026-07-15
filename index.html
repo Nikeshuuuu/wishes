@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient candle-glow that trails the cursor -->
+  <div class="glow" id="glow"></div>
+
+  <!-- Background music -->
+  <audio id="bgMusic" loop preload="none"></audio>
+  <button class="music-toggle" id="musicToggle" aria-label="Play background music">
+    <svg class="music-icon icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="music-icon icon-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+    <span class="music-label" id="musicLabel">our song</span>
+  </button>
+
+  <!-- ============ CAKE + CANDLE (opening gesture) ============ -->
+  <section class="cake-section cake-intro" id="cakeSection">
+    <div class="paper-grain"></div>
+    <div class="cake-intro-inner">
+      <p class="eyebrow" id="cakeEyebrow">A birthday, waiting for</p>
+      <h1 class="hero-name" id="cakeName">Priya</h1>
+      <h2 class="section-title cake-title-light" id="cakeTitle">make a wish 🕯️</h2>
+      <p class="cake-instruction" id="cakeInstruction">
+        Blow into your mic to blow out the candle — or just tap the flame.
+      </p>
+
+      <div class="cake-wrap cake-wrap-big">
+        <svg class="cake-svg" id="cakeSvg" viewBox="0 0 200 210" role="img" aria-label="A birthday cake with a lit candle">
+          <!-- candle -->
+          <rect x="94" y="60" width="12" height="34" rx="2" fill="#fff3d6"/>
+          <rect x="94" y="60" width="12" height="34" rx="2" fill="url(#candleStripe)"/>
+          <g id="flameGroup" class="flame-group">
+            <path id="flame" class="flame"
+                  d="M100 30 C 92 42 88 50 100 60 C 112 50 108 42 100 30 Z"/>
+            <path class="flame-core"
+                  d="M100 42 C 96 48 95 52 100 58 C 105 52 104 48 100 42 Z"/>
+          </g>
+          <g id="smokeGroup" class="smoke-group">
+            <path class="smoke" d="M100 55 C 96 48 104 44 100 36" />
+            <path class="smoke smoke-2" d="M100 55 C 104 46 96 42 100 32" />
+          </g>
+
+          <!-- cake body -->
+          <rect x="40" y="94" width="120" height="34" rx="6" fill="#ff9fb3"/>
+          <rect x="40" y="94" width="120" height="10" rx="4" fill="#ffc6d3"/>
+          <rect x="30" y="128" width="140" height="42" rx="8" fill="#e8395c"/>
+          <rect x="30" y="128" width="140" height="12" rx="5" fill="#ff6f91"/>
+          <rect x="20" y="170" width="160" height="30" rx="10" fill="#c81d43"/>
+
+          <!-- sprinkles -->
+          <circle cx="60" cy="112" r="2.5" fill="#ffe1e8"/>
+          <circle cx="80" cy="118" r="2.5" fill="#c81d43"/>
+          <circle cx="120" cy="112" r="2.5" fill="#ffe1e8"/>
+          <circle cx="140" cy="118" r="2.5" fill="#c81d43"/>
+          <circle cx="55" cy="150" r="2.5" fill="#ffe1e8"/>
+          <circle cx="145" cy="150" r="2.5" fill="#ffe1e8"/>
+
+          <defs>
+            <pattern id="candleStripe" width="12" height="10" patternUnits="userSpaceOnUse">
+              <rect width="12" height="5" fill="#ff6f91"/>
+            </pattern>
+          </defs>
+        </svg>
+      </div>
+
+      <button class="mic-button" id="micButton">🎤 enable mic to blow it out</button>
+      <p class="wish-message" id="wishMessage"></p>
+      <button class="relight-button" id="relightButton" style="display:none;">🔁 light it again</button>
+    </div>
+    <div class="scroll-cue" id="cakeScrollCue">
+      <span></span>
+      <p>blow to continue</p>
+    </div>
+  </section>
+
+  <!-- ============ HERO / WAX SEAL ============ -->
+  <section class="hero" id="hero">
+    <div class="paper-grain"></div>
+    <div class="hero-inner">
+      <p class="eyebrow" id="heroEyebrow">A letter, sealed just for</p>
+      <h1 class="hero-name" id="heroName">Priya</h1>
+
+      <button class="seal" id="sealButton" aria-label="Break the seal to open the letter">
+        <svg viewBox="0 0 120 120" class="seal-svg">
+          <circle cx="60" cy="60" r="54" class="seal-wax"/>
+          <circle cx="60" cy="60" r="54" class="seal-wax-crack" id="sealCrackTop"/>
+          <path d="M60 30 C 48 30 40 40 40 50 C 40 62 50 68 60 78 C 70 68 80 62 80 50 C 80 40 72 30 60 30 Z"
+                class="seal-heart"/>
+        </svg>
+      </button>
+      <p class="seal-instruction" id="sealInstruction">break the seal</p>
+    </div>
+    <div class="scroll-cue" id="scrollCue">
+      <span></span>
+      <p>scroll</p>
+    </div>
+  </section>
+
+  <!-- ============ THE LETTER ============ -->
+  <section class="letter-section" id="letterSection">
+    <div class="letter-card">
+      <p class="letter-opening" id="letterOpening">My dearest</p>
+      <p class="letter-body" id="letterBody"></p>
+      <p class="letter-closing" id="letterClosing">Always yours,</p>
+      <p class="letter-signature" id="letterSignature">Nikesh</p>
+    </div>
+  </section>
+
+  <!-- ============ REASONS ============ -->
+  <section class="reasons-section">
+    <h2 class="section-title">the reasons, in <em>chapters</em> 🖋️</h2>
+    <div class="reasons-grid" id="reasonsGrid"></div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery-section">
+    <h2 class="section-title">our moments 🍷</h2>
+    <div class="gallery-wall" id="galleryWall"></div>
+  </section>
+
+  <!-- ============ FINALE ============ -->
+  <section class="finale" id="finale">
+    <div class="finale-overlay"></div>
+    <div class="finale-content">
+      <h2 class="finale-headline" id="finaleHeadline">Happy Birthday</h2>
+      <p class="finale-name" id="finaleName">Priya</p>
+      <p class="finale-message" id="finaleMessage"></p>
+      <button class="finale-button" id="finaleButton">for you, always</button>
+      <p class="finale-hidden" id="finaleHidden"></p>
+    </div>
+  </section>
+
+  <canvas id="petalCanvas"></canvas>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
