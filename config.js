@@ -8,7 +8,7 @@
 const CONFIG = {
 
   // --- Names -----------------------------------------------------------
-  girlfriendName: "Priya",       // the name shown on the wax seal + title
+  girlfriendName: "Darling",       // the name shown on the wax seal + title
   yourName: "Nikesh",            // how you sign the letter at the end
 
   // --- Hero (the sealed-letter screen) ----------------------------------
@@ -23,14 +23,33 @@ const CONFIG = {
   musicLabel: "our song", // shown next to the play/pause button
 
   // --- The Letter section --------------------------------------------
-  letterOpening: "My dearest",
+  letterOpening: "My dearest Darling, 🕊️",
   letterBody: `I wanted to put something into words, because you deserve
-    more than just a "happy birthday" text. From the way you laugh at
-    your own jokes before you finish telling them, to how you somehow
-    make even an ordinary Tuesday feel like something worth remembering —
-    you make everything better just by being in it. Today is about you,
-    and I hope it's as wonderful as you are.`,
-  letterClosing: "Always yours, 🖋️",
+    more than just a "happy birthday" text. 💌 From the way you laugh at
+    your own jokes before you finish telling them 😂💕, to how you somehow
+    make even an ordinary day feel like magic ✨ — you make everything
+    better just by being in it. You are my everything. 🥰
+
+    Thank you for choosing me, again and again, every single day. 💑
+    We will always be together, no matter how many storms we weather 🌦️➡️☀️,
+    because what we have is worth fighting for every time.
+
+    Even today, I'll say it like it's the first time: you are the most
+    amazing thing that has ever happened to my life. 🌟 You are the most
+    beautiful, kind-hearted, breathtaking girl I have ever known 😍,
+    and I am so incredibly proud to call you my life partner. 💍
+
+    Thank you so much for being a part of my life, Darlinggg.... 🥹💖
+
+    Today is all about you, my love,
+    and I hope it's every bit as wonderful and radiant as you are. 🎂🌸
+
+    Here's to many more birthdays, and many more memories written
+    just for us. 📖💫 Many happy returns of the day, my love. I love you
+    more than words can hold. 💞
+    Happy Birthday once again, my Darlingggg.... 🎉🥳❤️`,
+
+  letterClosing: "Anything for you, everything for you, and don't forget — I'm always yours. 🖋️💘",
 
   // --- Reasons ("chapters" of the letter) -------------------------------
   // photo is optional — shown when a card is tapped/hovered
@@ -38,22 +57,27 @@ const CONFIG = {
     {
       numeral: "I",
       text: "You make even the smallest moments feel like they matter. 💌",
-      photo: "images/gif1.gif"
+      photo: "images/gif0.gif"
     },
     {
       numeral: "II",
-      text: "Your laugh is, without competition, my favourite sound. 🕊️",
-      photo: "images/gif2.gif"
+      text: "With you, it never feels like work — just two people choosing each other, over and over. 💑",
+      photo: "images/gif1.gif"
     },
     {
       numeral: "III",
       text: "You have this way of showing up for people that I don't think you even notice you do. 🌹",
-      photo: "images/gif1.gif"
+      photo: "images/gif2.gif"
     },
     {
       numeral: "IV",
       text: "Every year with you has been better than the one before it. ✨",
-      photo: "images/gif2.gif"
+      photo: "images/gif3.gif"
+    }
+    ,{
+      numeral: "V",
+      text: "And many more which i can't express. ✨",
+      photo: "images/gif4.gif"
     }
   ],
 
@@ -70,7 +94,7 @@ const CONFIG = {
 
   // --- Finale ------------------------------------------------------------
   finalePhoto: "images/d3.jpeg",
-  finaleHeadline: "Happy Birthday 🌹",
+  finaleHeadline: "Happy Birthday Bangarammm...🌹",
   finaleMessage: `Here's to another year of you — messy, brilliant, endlessly
     kind, completely irreplaceable. I'm so glad I get to know you.`,
   finaleButtonLabel: "for you, always 🕊️",
